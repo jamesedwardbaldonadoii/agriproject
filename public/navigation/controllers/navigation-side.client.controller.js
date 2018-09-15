@@ -20,6 +20,9 @@
 				}, {
 					display: 'History', 
 					path: 'investments.history'
+				}, {
+					display: 'New Offer', 
+					path: 'offer.new'
 				}]
 			}, {
 				display: 'Offers',
