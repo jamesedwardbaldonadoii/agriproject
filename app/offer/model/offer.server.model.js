@@ -44,12 +44,15 @@ let OfferSchema = new Schema({
     }],
     type: {
         type: String,
-        default: 'closed',
-        enum: ['investee', 'investment']
+        default: 'investee',
+        enum: ['investee', 'investor']
     },
     tags: [{
         type: String,
-        enum: ['crops', 'poultries', 'livestock', 'fisheries', 'organic', 'tech', 'others']
+        enum: ['crops', 'poultries', 'livestock', 'fisheries', 'organic', 'tech']
+    }],
+    videos: [{
+        type: String
     }],
     created_date: {
         type: Date,

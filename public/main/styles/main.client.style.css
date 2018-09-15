@@ -2,3 +2,38 @@ html,
 body {
 	
 }
+.my-container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* SIDEBAR */
+.sidebar{
+    width: 100%;
+    bottom: 0;
+    background: #fff;
+    height: auto;
+    border-right: 1px solid #aaa;
+}
+.sidebar ul{
+	font-size: 16px;
+    margin: 0 0 0 80px;
+    padding: 0;
+}
+.sidebar ul li{
+    list-style: none;
+    font-weight: bold;
+}
+.sidebar ul li a{
+	color: #333;
+    text-decoration: none;
+    display: block;
+    padding: 5px 10px;
+}
+.sidebar ul li a:hover{
+	color: #007700;
+}
+.sidebar ul li ul li{
+    margin-left: -30px;
+    font-weight: lighter;
+}

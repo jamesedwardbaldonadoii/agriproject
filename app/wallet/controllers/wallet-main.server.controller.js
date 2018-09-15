@@ -2,7 +2,7 @@
  	   Investor = mongoose.model('Investor');
 
 exports.create = (data, callback) => {
-	let investor = new Investor(obj);
+	let investor = new Investor(data);
 
 	investor.save((req, res) => {
 		if (err) {

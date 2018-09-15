@@ -8,6 +8,7 @@ body{
 .signup{
     padding-bottom: 10px; 
     margin-top: 50px !important;
+    background: #fff;
 }
 .bordered{
 	border: 1px solid #000;
@@ -173,4 +174,14 @@ body{
 .my_textarea{
     width: 100% !important;
     padding: 5px;
+}
+
+
+.main{
+    position: relative;
+    width: 84%;
+    background: #aaa;
+    bottom: 0;
+    box-sizing: border-box;
+    z-index: 0;
 }

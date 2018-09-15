@@ -18,6 +18,14 @@ angular.module("main")
 					name: "offer.new",
 					url: "/",
 					templateUrl: "offer/views/offer-new.client.view.html"
+				},
+				filter: {
+					name: "offer.filter",
+					url: "/",
+					params: {
+						tags: null,
+					},
+					templateUrl: "offer/views/offer-list.client.view.html"
 				}
 			};
 
@@ -48,5 +56,6 @@ angular.module("main")
 
 			$stateProvider.state(offer.main);
 			$stateProvider.state(offer.new);
+			$stateProvider.state(offer.filter);
 		}
 	]);

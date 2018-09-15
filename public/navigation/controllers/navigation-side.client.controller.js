@@ -27,26 +27,29 @@
 			}, {
 				display: 'Offers',
 				childNav: [{
-					display: 'Crops', 
-					path: 'test.one'
+					display: 'Tech', 
+					path: 'offer.filter({tags: "tech"})'
 				}, {
+					display: 'Machinery', 
+					path: 'offer.filter({tags: "machinery"})'
+				},{
 					display: 'Poultries', 
-					path: 'test.two'
+					path: 'offer.filter({tags: "poultries"})'
 				}, {
 					display: 'Livestock', 
-					path: 'test.two'
+					path: 'offer.filter({tags: "livestock"})'
 				}, {
 					display: 'Fisheries', 
-					path: 'test.two'
+					path: 'offer.filter({tags: "fisheries"})'
 				}, {
 					display: 'Organic', 
-					path: 'test.two'
+					path: 'offer.filter({tags: "organic"})'
 				}, {
-					display: 'Tech', 
-					path: 'test.two'
+					display: 'Crops', 
+					path: 'offer.filter({tags: "crops"})'
 				}, {
 					display: 'View All', 
-					path: 'test.two'
+					path: 'offer.filter({tags: "all"})'
 				}]
 			},
 			{

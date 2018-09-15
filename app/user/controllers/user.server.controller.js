@@ -61,7 +61,7 @@ exports.signin = function (req, res, next) {
 exports.create = function(req, res, next) {
 	let data = req.body;
 	data.provider = 'local';
-
+	console.log(data);
     const user = new User(data);
 
     user.save(function (err, response) {

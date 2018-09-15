@@ -1,4 +1,5 @@
-<div ng-controller="NavigationSideController as sidenav">
+
+<div ng-controller="NavigationSideController as sidenav" class="sidebar">
 	<ul>
 		<li ng-repeat="nav in sidenav.navigations">
 			<a ng-if="!nav.path" ng-bind="nav.display"></a>
@@ -9,6 +10,7 @@
 					<a ui-sref="{{child.path}}" ng-bind="child.display"></a>
 				</li>
 			</ul>
+
 		</li>
 	</ul>
 </div>
