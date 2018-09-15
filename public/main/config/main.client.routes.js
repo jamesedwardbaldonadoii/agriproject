@@ -2,17 +2,25 @@ angular.module("main")
 	.config(["$stateProvider", "$urlRouterProvider", 
 		function ($stateProvider, $urlRouterProvider) {
 
-			var home = {
+			const home = {
 				name: "home",
 				url: "/",
 				templateUrl: "main/views/main.client.view.html"
-			}
+			};
 
-			var home = {
-				name: "account",
-				url: "/account",
-				templateUrl: "account/views/account.client.view.html"
-			}
+			const offer = {
+				main: {
+					name: "offer",
+					url: "/offer",
+					templateUrl: "offer/views/offer.client.view.html"
+				},
+				new: {
+					name: "offer.new",
+					url: "/",
+					templateUrl: "offer/views/offer-new.client.view.html"
+				}
+			};
+
 
 			var feeds = {
 				main: {
@@ -32,18 +40,13 @@ angular.module("main")
 				}
 			};
 
-/*			var feeds
-			.state('contacts', {
-        url: "/contacts",
-        params: {
-            param1: null
-        },
-        templateUrl: 'contacts.html'
-    })
-*/
 			$stateProvider.state(home);
 			$stateProvider.state(feeds.main);
 			$stateProvider.state(feeds.first);
 			$stateProvider.state(feeds.second);
+
+
+			$stateProvider.state(offer.main);
+			$stateProvider.state(offer.new);
 		}
 	]);
