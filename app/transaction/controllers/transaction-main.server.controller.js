@@ -9,7 +9,7 @@ exports.create = (data, callback) => {
 			return callback(err);
 		}
 
-		res
+		callback(res);
 			// .populate(/*field model*/, /*fields*/)
 			// .populate({
 			// 	path: /*field model*/,

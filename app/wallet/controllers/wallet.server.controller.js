@@ -7,6 +7,8 @@ exports.create = (socket, req, callback, next) => {
 		if (err) {
 			return callback(err);
 		}
+
+		callback (false, res);
 	});
 };
 
@@ -14,10 +16,15 @@ exports.find = {
 	one: (socket, req, callback, next) => {
 		let data = req;
 		/*Stuff*/
-		walletmain.find.one(data, (err, res) => {
+		walletmain.find.one({user: socket.request.user._id}, (err, res) => {
 			if (err) {
 				return callback(err);
 			}
+			if (!res) {
+				exports.create(socket, { amount: 100000, user:  socket.request.user._id}, callback, next)
+			} else {
+				callback(res);
+			}			
 		});
 	},
 	all: (socket, req, callback, next) => {
@@ -34,7 +41,7 @@ exports.find = {
 exports.update = (socket, req, callback, next) => {
 	let data = req;
 	/*Stuff*/
-	walletmain.update(data, (err, res) => {
+	walletmain.update(socket.request.user._id, data, (err, res) => {
 		if (err) {
 			return callback(err);
 		}

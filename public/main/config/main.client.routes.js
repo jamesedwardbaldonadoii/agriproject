@@ -26,14 +26,30 @@ angular.module("main")
 						tags: null,
 					},
 					templateUrl: "offer/views/offer-list.client.view.html"
+				},
+				invest: {
+					name: "offer.invest",
+					url: "/",
+					templateUrl: "offer/views/offer-list.client.view.html"
 				}
 			};
 
+			const wallet = {
+				name: "wallet",
+				url: "/wallet/",
+				templateUrl: "wallet/views/wallet.client.view.html"
+			}
+			
+			const account = {
+				name: "account",
+				url: "/account/",
+				templateUrl: "account/views/account.client.view.html"
+			}
 
 			var feeds = {
 				main: {
 					name: "feeds",
-					url: "/feeds",
+					url: "/feeds/",
 					templateUrl: "feeds/views/feeds.client.view.html"
 				},
 				first: {
@@ -49,6 +65,9 @@ angular.module("main")
 			};
 
 			$stateProvider.state(home);
+			$stateProvider.state(wallet);
+			$stateProvider.state(account);
+			
 			$stateProvider.state(feeds.main);
 			$stateProvider.state(feeds.first);
 			$stateProvider.state(feeds.second);
@@ -57,5 +76,6 @@ angular.module("main")
 			$stateProvider.state(offer.main);
 			$stateProvider.state(offer.new);
 			$stateProvider.state(offer.filter);
+			$stateProvider.state(offer.invest);
 		}
 	]);

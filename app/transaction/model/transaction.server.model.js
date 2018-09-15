@@ -12,13 +12,12 @@ let TransactionSchema = new Schema({
     },
     type: {
         type: String,
-        default: 'others',
         enum: ['deposit', 'withdrawal', 'payment']
     }, 
     source: {
         type: String,
         default: 'others',
-        enum: ['bank', 'visa', 'mastercard', 'paypal']
+        enum: ['bank', 'visa', 'mastercard', 'paypal', 'others']
     },
     amount: {
         type: Number,

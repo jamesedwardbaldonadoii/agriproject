@@ -1,0 +1,14 @@
+<div ng-controller="AccountClientController as account">
+	Account Page
+	<div>
+		<form ng-submit="account.depositAmount()">
+			<div>
+				<label>Deposit Amount</label>
+				<input type="number" name="" ng-model="account.deposit"> 
+			</div>
+			<div>
+				<input type="submit" name="" value="Deposit to wallet">
+			</div>
+		</form>
+	</div>
+</div>
