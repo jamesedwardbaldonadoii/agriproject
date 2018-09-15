@@ -22,11 +22,14 @@ exports.find = {
 	},
 	all: (socket, req, callback, next) => {
 		let data = req;
+
 		/*Stuff*/
 		offermain.find.all(data, (err, res) => {
 			if (err) {
 				return callback(err);
 			}
+
+			callback(res);
 		});
 	}
 };

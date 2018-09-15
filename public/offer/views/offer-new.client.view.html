@@ -1,43 +1,45 @@
 <div>
 	New Offer
-	<form>
+	<form method="post" ng-submit="offer.create()">
 		<div>
 			<label>Description</label>
-			<input type="" name="description">
+			<input type="" name="description" ng-model="offer.newOffer.description">
 		</div>
 		<div>
 			<label>Total Investment</label>
-			<input type="" name="description">
+			<input type="" name="description" ng-model="offer.newOffer.totalInvestment">
 		</div>
 		<div>
 			<label>Return Of Investment</label>
-			<input type="" name="description">
-		</div>
-		<div>
-			<label>Return Of Investment</label>
-			<input type="" name="description">
+			<input type="" name="description" ng-model="offer.newOffer.roi">
 		</div>
 		<div>
 			<label>Range</label>
 			<div>
 				<label>Years</label>
-				<input type="" name="years">
+				<input type="" name="years" ng-model="offer.newOffer.range.years">
 			</div>
 			<div>
 				<label>Months</label>
-				<input type="" name="months">
+				<input type="" name="months" ng-model="offer.newOffer.range.months">
 			</div>
 			<div>
 				<label>Days</label>
-				<input type="" name="days">
+				<input type="" name="days" ng-model="offer.newOffer.range.days">
+			</div>
+			<div class="addcontend">
+				<div ng-repeat="item in offer.newOffer.videos track by $index">
+					<input ng-model="item" />
+				</div>
+				<button ng-click="offer.newOffer.videos.push('')">Add new videos</button>
 			</div>
 		</div>
 		<div>
 			<label>Add tags</label>
-			{{offer.tags}}
-			<tags-input ng-model="tags" add-on-paste="true" add-from-autocomplete-only="true">
-				<auto-complete source="offer.tags"></auto-complete>
+			<tags-input ng-model="offer.newOffer.tags" add-on-paste="true" add-from-autocomplete-only="true">
+				<auto-complete source="offer.loadTags($query)"></auto-complete>
 			</tags-input>
 		</div>
+		<button type="submit">Submit</button>
 	</form>
 </div>
