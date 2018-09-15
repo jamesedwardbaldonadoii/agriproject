@@ -6,25 +6,108 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title><%= title %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/home.css">
+        <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700|Montserrat:400,400i,500,500i,600,600i,700,700i,800,800i" rel="stylesheet">
     </head>
     <body>
-        <a href="/signup">Signup</a>
-        <div></div>
-        Login
-         <form role="form" method="post" action="/api/signin" accept-charset="UTF-8">
-            <div >
-                 <label  for="exampleInputEmail2">Username</label>
-                 <input type="text" name="username" placeholder="Username" required>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="images/logo.png" alt="GaiasTech Logo">
             </div>
-            <div >
-                 <label  for="exampleInputPassword2">Password</label>
-                 <input type="password" name="password" placeholder="Password" required>
-                 <div><a href="">Forget the password ?</a></div>
+
+            <div class="header-links">
+                <ul class="cms-list">
+                    <li>About Us</li>
+                    <li>How it Works</li>
+                    <li>Support</li>
+                    <li>Success Stories</li>
+                </ul>
+                <div class="signup-login-block">
+                    <a href="/signup">Sign-up</a>
+                    <div class="login-anchor">Login</div>
+                    <form role="form" method="post" action="/api/signin" accept-charset="UTF-8">
+                        <div >
+                            <label  for="exampleInputEmail2">Username</label>
+                            <input type="text" name="username" placeholder="Username" required>
+                        </div>
+                        <div >
+                            <label  for="exampleInputPassword2">Password</label>
+                            <input type="password" name="password" placeholder="Password" required>
+                            <div><a href="">Forget the password ?</a></div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" >Sign in</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                 <button type="submit" >Sign in</button>
+        </div>
+
+        <script>
+           jQuery(".login-anchor").on("click", function(){
+               if(jQuery(this).hasClass("active")) {
+                   jQuery(this).removeClass("active");
+                   jQuery("header").removeClass("solid");
+               } else {
+                   jQuery(this).addClass("active");
+                   jQuery("header").addClass("solid");
+               }
+           });
+
+           jQuery(window).scroll(function() {
+
+               var div_height = jQuery('.hero-banner-container').height();
+               var page_scroll = jQuery(window).scrollTop();
+
+               if(page_scroll > div_height) {
+                   jQuery("header").addClass("solid-active");
+               } else {
+                   jQuery("header").removeClass("solid-active");
+               }
+           });
+        </script>
+    </header>
+
+    <div class="hero-banner-container">
+        <div class="hero-banner-content">
+            <div class="hero-banner-content">
+                <h1>Find the right soil to plant your Investments</h1>
+                <a href="#" class="bordered-btn"><span>Start Investing</span></a>
             </div>
-         </form>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="three-point-block">
+            <div class="point-block">
+                <div class="point-icon"><img src="images/icons/point-icon-2.png"/></div>
+                <h2>Passive Income</h2>
+                <p>We provide you with an alternative medium for investment and an additional source of income for living.</p>
+            </div>
+
+            <div class="point-block">
+                <div class="point-icon"><img src="images/icons/point-icon-1.png"/></div>
+                <h2>Social Connection</h2>
+                <p>We provide you an opportunity to directly impact the lives of our farmers.</p>
+            </div>
+
+            <div class="point-block">
+                <div class="point-icon"><img src="images/icons/point-icon-2.png"/></div>
+                <h2>Passive Income</h2>
+                <p>We provide you with an alternative medium for investment and an additional source of income for living.</p>
+            </div>
+        </div>
+
+        <div class="wide-banner">
+            <div class="wide-banner-content">
+                <h1>Be the hope of the farmers</h1>
+                <p>Help farmers start the seasons, at the same time earn for your future.</p>
+                <a href="#" class="bordered-btn"><span>Get Started</span></a>
+            </div>
+        </div>
+    </div>
+
     </body>
 </html>
