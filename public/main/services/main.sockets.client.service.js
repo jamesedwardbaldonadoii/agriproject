@@ -27,7 +27,6 @@
 		
 		//  PUT EMIT LISTENERS HERE TO PASS TO SCOPE LISTENER
 		
-
 		return MainSocket;
 	}
 

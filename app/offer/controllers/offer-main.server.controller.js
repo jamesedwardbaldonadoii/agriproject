@@ -2,20 +2,14 @@
  	   Offer = mongoose.model('Offer');
 
 exports.create = (data, callback) => {
-	let offer = new Offer(obj);
+	let offer = new Offer(data);
 
-	Offer.save((req, res) => {
+	offer.save((err, res) => {
 		if (err) {
 			return callback(err);
 		}
 
-		res
-			.select(req.select)
-			// .populate(/*field model*/, /*fields*/)
-			// .populate({
-			// 	path: /*field model*/,
-			// 	select: /*fields*/
-			// }, callback);
+		callback(false, res);
 	});
 };
 
@@ -32,6 +26,7 @@ exports.find = {
 			});
 	},
 	all: (req, callback) => {
+		console.log(req);
 		Offer
 			.find(req.query)
 			.sort(req.sort)
