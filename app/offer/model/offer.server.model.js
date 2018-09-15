@@ -35,7 +35,7 @@ let OfferSchema = new Schema({
     }],
     status: {
         type: String,
-        default: 'closed',
+        default: 'active',
         enum: ['active', 'closed', 'disabled']
     },
     bookmarker: [{
@@ -45,7 +45,7 @@ let OfferSchema = new Schema({
     type: {
         type: String,
         default: 'closed',
-        enum: ['investor', 'investment']
+        enum: ['investee', 'investment']
     },
     tags: [{
         type: String,

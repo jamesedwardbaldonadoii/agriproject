@@ -1,0 +1,43 @@
+<div>
+	New Offer
+	<form>
+		<div>
+			<label>Description</label>
+			<input type="" name="description">
+		</div>
+		<div>
+			<label>Total Investment</label>
+			<input type="" name="description">
+		</div>
+		<div>
+			<label>Return Of Investment</label>
+			<input type="" name="description">
+		</div>
+		<div>
+			<label>Return Of Investment</label>
+			<input type="" name="description">
+		</div>
+		<div>
+			<label>Range</label>
+			<div>
+				<label>Years</label>
+				<input type="" name="years">
+			</div>
+			<div>
+				<label>Months</label>
+				<input type="" name="months">
+			</div>
+			<div>
+				<label>Days</label>
+				<input type="" name="days">
+			</div>
+		</div>
+		<div>
+			<label>Add tags</label>
+			{{offer.tags}}
+			<tags-input ng-model="tags" add-on-paste="true" add-from-autocomplete-only="true">
+				<auto-complete source="offer.tags"></auto-complete>
+			</tags-input>
+		</div>
+	</form>
+</div>
