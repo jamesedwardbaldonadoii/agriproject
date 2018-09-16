@@ -30,6 +30,9 @@ angular.module("main")
 				invest: {
 					name: "offer.invest",
 					url: "/",
+					params: {
+						data: null,
+					},
 					templateUrl: "offer/views/offer-list.client.view.html"
 				}
 			};
@@ -64,6 +67,24 @@ angular.module("main")
 				}
 			};
 
+			var investments = {
+				main: {
+					name: "investments",
+					url: "/investment",
+					templateUrl: "investment/views/investment.client.view.html"
+				},
+				history: {
+					name: "investments.history",
+					url: "/",
+					templateUrl: "investment/views/investment-history.client.view.html"
+				},
+				active: {
+					name: "investments.active",
+					url: "/",
+					templateUrl: "investment/views/investment-active.client.view.html"
+				}
+			};
+
 			$stateProvider.state(home);
 			$stateProvider.state(wallet);
 			$stateProvider.state(account);
@@ -72,6 +93,9 @@ angular.module("main")
 			$stateProvider.state(feeds.first);
 			$stateProvider.state(feeds.second);
 
+			$stateProvider.state(investments.main);
+			$stateProvider.state(investments.history);
+			$stateProvider.state(investments.active);
 
 			$stateProvider.state(offer.main);
 			$stateProvider.state(offer.new);

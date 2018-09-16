@@ -4,7 +4,7 @@
 exports.create = (data, callback) => {
 	let transaction = new Transaction(data);
 
-	transaction.save((req, res) => {
+	transaction.save((err, res) => {
 		if (err) {
 			return callback(err);
 		}

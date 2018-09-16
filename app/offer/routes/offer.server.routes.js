@@ -9,5 +9,6 @@ module.exports = function(app, io) {
 		socket.route("offer.find", offer.find.all);
 		socket.route("offer.findOne", offer.find.one);
 		socket.route("offer.remove", offer.remove);
+		socket.route("offer.update", offer.update);
 	});
 };

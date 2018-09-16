@@ -27,7 +27,7 @@
 		};
 
 		vm.getOffer = function () {
-			var tags = {query: $state.params};
+			var tags = { query: {tags: $state.params.tags, status: 'active'} };
 
 			if ($state.params.tags === 'all') {
 				tags = {};
@@ -35,6 +35,44 @@
 
 			mainSocket.emit('offer.find', tags, function (res) {
 				vm.offers = res;
+			});
+		};
+
+		vm.invest = function (item) {
+			mainSocket.emit('wallet.findOne', {}, function (res) {
+				var amount = res.amount;
+				if (amount < item.totalInvestment) {
+					return alert('Not enought money in your wallet. Please deposit and try again.');
+				}
+
+				mainSocket.emit('wallet.update', { $inc: { amount: -(item.totalInvestment) } }, function (res) {
+
+				});
+
+				if (item.investors && item.investors.indexOf(vm.auth._id) < 0) {
+
+					item.investors.push(vm.auth._id);
+					item.status = 'closed';
+
+					mainSocket.emit('offer.update', {
+						query: {
+							_id: item._id
+						},
+						data: item
+					}, function (res) {
+
+					});
+
+
+					mainSocket.emit('transaction.create', {
+						amount: item.totalInvestment,
+						type: 'payment',
+						wallet: res._id,
+						offer: item._id
+					}, function (res) {
+
+					});
+				}
 			});
 		};
 

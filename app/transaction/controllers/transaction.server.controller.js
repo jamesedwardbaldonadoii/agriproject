@@ -27,6 +27,8 @@ exports.find = {
 			if (err) {
 				return callback(err);
 			}
+
+			callback(res);
 		});
 	}
 };

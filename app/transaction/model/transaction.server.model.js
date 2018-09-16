@@ -2,10 +2,6 @@ const mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 let TransactionSchema = new Schema({
-    amount: {
-        type: Number,
-        default: 0
-    },
     note: {
         type: String,
         default: ''
@@ -22,10 +18,6 @@ let TransactionSchema = new Schema({
     amount: {
         type: Number,
         default: 0
-    },
-    user: {
-        type: Schema.ObjectId,
-        ref: 'User'
     },
     user: {
         type: Schema.ObjectId,
