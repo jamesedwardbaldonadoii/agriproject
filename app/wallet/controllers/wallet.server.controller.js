@@ -45,6 +45,8 @@ exports.update = (socket, req, callback, next) => {
 		if (err) {
 			return callback(err);
 		}
+		
+		callback(res);
 	});
 };
 

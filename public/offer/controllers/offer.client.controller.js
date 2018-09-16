@@ -72,6 +72,17 @@
 					}, function (res) {
 
 					});
+
+					$uibModal.open({
+				      animation: true,
+				      ariaLabelledBy: 'modal-title-bottom',
+				      ariaDescribedBy: 'modal-body-bottom',
+				      templateUrl: 'myModalContent.html',
+				      size: 'sm',
+				      controller: function($scope) {
+				        $scope.name = 'bottom';  
+				      }
+				    });
 				}
 			});
 		};
