@@ -2,8 +2,8 @@
   "name": "trading.teefayb.app",
   "description": "Investment Management System",
   "version": "0.0.1",
-  "private": false,
-  "license": "MIT",
+  "private": true,
+  "license": "",
   "dependencies": {
     "body-parser": "1.16.0",
     "compression": "^1.7.3",
